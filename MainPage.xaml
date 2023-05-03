@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="GifAnimation.MainPage"
+    xmlns:local="clr-namespace:GifAnimation"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
@@ -16,10 +17,15 @@
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 Source="dotnet_bot.png" />
 
-            <Image
+             <local:GIFImage
                 x:Name="imgLoader"
-                IsAnimationPlaying="False"
-                Source="birdflying.gif" />
+                Source="birdflying.gif"
+                HeightRequest="200"
+                WidthRequest="200"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsAnimationPlaying="True"
+                />
 
             <Label
                 FontSize="32"
