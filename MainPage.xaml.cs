@@ -1,4 +1,10 @@
-﻿namespace GifAnimation;
+﻿using System.IO;
+#if IOS
+using Foundation;
+using UIKit;
+#endif
+
+namespace GifAnimation;
 
 public partial class MainPage : ContentPage
 {
@@ -7,7 +13,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+    }
 
     protected async override void OnAppearing()
     {
@@ -15,6 +21,7 @@ public partial class MainPage : ContentPage
         await Task.Delay(500);
         imgLoader.IsAnimationPlaying = false;
         imgLoader.IsAnimationPlaying = true;
+
     }
     private void OnCounterClicked(object sender, EventArgs e)
 	{
@@ -27,5 +34,6 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
 }
 

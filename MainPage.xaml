@@ -9,6 +9,7 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25"
+            x:Name="verview"
             VerticalOptions="Center">
 
             <Image
@@ -16,10 +17,15 @@
                 HorizontalOptions="Center"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 Source="dotnet_bot.png" />
-
+            <Image x:Name="gifImage"
+                   IsEnabled="True"
+                   IsAnimationPlaying="True"
+                   />
+            
              <local:GIFImage
                 x:Name="imgLoader"
                 Source="birdflying.gif"
+                ImageName="birdflying.gif"
                 HeightRequest="200"
                 WidthRequest="200"
                 VerticalOptions="FillAndExpand"
